@@ -57,7 +57,10 @@
         };
         settings.prototype.pupScriptUrl = 'http://autowoot.itoffice.sk/bots/easy/easybot.js';
         settings.prototype.afkTime = 1 * 60 * 1000;
-        
+        settings.prototype.songIntervalMessages = [{
+            interval: 5,
+            offset: 0,
+            msg: '/me TONIGHT 9PM GMT : HARD BASS 2014 LIVESTREAM! DONT MISS IT ;)'
         settings.prototype.songCount = 0;
         settings.prototype.startup = function () {
             this.launchTime = new Date();
