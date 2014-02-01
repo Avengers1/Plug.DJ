@@ -286,7 +286,7 @@
         return RoomHelper
     })();
     pupOnline = function () {
-        return API.sendChat('Bot is active :+1:')
+        return API.sendChat('/me AFK remover activated')
     };
     populateUserData = function () {
         var u, users, _i, _len;
@@ -499,9 +499,9 @@
             return _ref10
         }
         afksCommand.prototype.init = function () {
-            this.command = '!afks';
+            this.command = '//afks';
             this.parseType = 'exact';
-            return this.rankPrivelege = 'user'
+            return this.rankPrivelege = 'bouncer'
         };
         afksCommand.prototype.functionality = function () {
             var a, djAfk, djs, msg, now, _i, _len;
@@ -532,14 +532,14 @@
             return _ref14
         }
         dieCommand.prototype.init = function () {
-            this.command = '!die';
+            this.command = '//die';
             this.parseType = 'exact';
-            return this.rankPrivelege = 'cohost'
+            return this.rankPrivelege = 'bouncer'
         };
         dieCommand.prototype.functionality = function () {
             undoHooks();
             data.implode();
-            return API.sendChat('Bot is now OFFLINE!')
+            return API.sendChat('/me AFK remover switching off . . .')
         };
         return dieCommand
     })(Command);
@@ -551,9 +551,9 @@
             return _votekickCommand
         }
         f.prototype.init = function () {
-            this.command = '!ban';
+            this.command = '//ban';
             this.parseType = 'startsWith';
-            return this.rankPrivelege = 'cohost'
+            return this.rankPrivelege = 'host'
         };
         f.prototype.functionality = function () {
             var a, r, users, votekickNastavit, votekickKoho, votekickDovod;
@@ -565,7 +565,7 @@
             votekickKoho = votekickKoho.replace("@", "");
             userRemove = r.lookupUser(votekickKoho);
             if (userRemove === false) {
-                API.sendChat("BAN USAGE: !ban @UserName")
+                API.sendChat("I couldn't find that person to ban")
             } else {
                 for (_kickus = 0; _kickus < API.getUsers().length; _kickus++) {
                     if (API.getUsers()[_kickus].username === votekickKoho) {
@@ -588,9 +588,9 @@
             return _ref25
         }
         skipCommand.prototype.init = function () {
-            this.command = '!skip';
+            this.command = '//skip';
             this.parseType = 'startsWith';
-            return this.rankPrivelege = 'cohost'
+            return this.rankPrivelege = 'bouncer'
         };
         skipCommand.prototype.functionality = function () {
             return API.moderateForceSkip()
@@ -605,9 +605,9 @@
             return _ref27
         }
         commandsCommand.prototype.init = function () {
-            this.command = '!help';
+            this.command = '//help';
             this.parseType = 'exact';
-            return this.rankPrivelege = 'user'
+            return this.rankPrivelege = 'bouncer'
         };
         commandsCommand.prototype.functionality = function () {
             var a, c, cc, cmd, msg, user, _i, _j, _len, _len1, _ref28, _ref29;
@@ -667,7 +667,7 @@
     handleUserJoin = function (a) {
         data.userJoin(a);
         data.users[a.id].updateActivity();
-        return API.sendChat("Hello  @" + a.username + ", I'm a Easy bot from http://autowoot.itoffice.sk")
+        return API.sendChat("Welcome to Hardstyle-Heaven  @" + a.username + ", Chat at least once every 60 minutes if you want to stay in the waitlist")
     };
     handleNewSong = function (b) {
         var c;
